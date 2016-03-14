@@ -3,6 +3,7 @@ import (
 	"math"
 	"fmt"
 	"strconv"
+	"reflect"
 )
 
 type geometry interface{
@@ -77,4 +78,21 @@ func DemoInterface(){
 	default:
 		fmt.Println("case not matched.")
 	}
+}
+
+
+func DemoReflect(){
+	var f float64 = 3.4
+	v := reflect.ValueOf(f)
+	fmt.Println("type:", v.Type())
+	fmt.Println("kind:", v.Kind())
+	fmt.Println("value:", v.Float())
+
+	var x float64 = 3.2
+	p := reflect.ValueOf(&x)
+	fmt.Println("type:", p.Type())
+	fmt.Println("kind:", p.Kind()) //reflect.Ptr
+	v1 := p.Elem()
+	v1.SetFloat(3.4)
+
 }
