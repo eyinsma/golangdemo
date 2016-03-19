@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func init(){
+func init() {
 	fmt.Println("package fc init")
 }
 
@@ -105,39 +105,39 @@ func DemoDefer() {
 	fmt.Println("file:", f)
 
 	for i := 0; i < 5; i++ {
-		defer fmt.Println("v:",i)
+		defer fmt.Println("v:", i)
 	}
 }
 
 type testInt func(int) bool
 
-func isOdd(integer int) bool{
-	if integer%2 == 0{
+func isOdd(integer int) bool {
+	if integer % 2 == 0 {
 		return false
 	}
 	return true
 }
 
 func isEven(integer int) bool {
-	if integer%2 ==0 {
+	if integer % 2 == 0 {
 		return true
 	}
 
 	return false
 }
 
-func filter(ints []int, f testInt) []int{
+func filter(ints []int, f testInt) []int {
 	var result []int
-	for _,value := range ints{
-		if f(value){
+	for _, value := range ints {
+		if f(value) {
 			result = append(result, value)
 		}
 	}
 	return result
 }
 
-func DemoFuncPara(){
-	slice := []int{1,2,3,4}
+func DemoFuncPara() {
+	slice := []int{1, 2, 3, 4}
 	odd := filter(slice, isOdd)
 	fmt.Println("slice:", odd)
 }

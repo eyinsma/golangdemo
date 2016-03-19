@@ -25,10 +25,14 @@ func main() {
 	fc.DemoGoto()
 	fc.DemoFor()
 	fc.DemoSwitch()
-	fc.DemoVarPara(1,2)
+	fc.DemoVarPara(1, 2)
 	fc.DemoDefer()
 	fc.DemoFuncPara()
 
 	//gortn
 	cc.DemoFirstGoRtn()
+	cc.DemoChan()
+	cc.DemoBufChan()
+	cc.DemoRangeChan()
+	cc.DemoSelectChan()
 }

@@ -10,21 +10,21 @@ var (
 	activated = true
 )
 
-const(
+const (
 	GPi = 3.4
 	enumX, enumYSameToX = iota, iota //1, second line
 	enumZ = iota // 2
 
 )
 
-const(
+const (
 	enumXX = iota //0
 	enumYY = iota //1
 	enumZZ        //2
 
 )
 
-func DefineVars(){
+func DefineVars() {
 	var v1, v2, v3 int
 	v1 = 1 + v3 // 1
 	v2 = 2 + v1 //2
@@ -57,43 +57,43 @@ func DefineVars(){
 }
 
 
-func DemoErr(){
+func DemoErr() {
 	err := errors.New("oh, dam")
 	if err != nil {
 		fmt.Println(err)
 	}
 }
 
-func DemoSwap(a int, b int) (int, int){
-	return b,a
+func DemoSwap(a int, b int) (int, int) {
+	return b, a
 }
 
-func DemoArray(){
+func DemoArray() {
 	var arr[10] int
 	arr[0] = 0
 
-	arr3 := [3]int{1,2,3}
-	arr4 := [...]int{1,2,3,4} //should be [...]
+	arr3 := [3]int{1, 2, 3}
+	arr4 := [...]int{1, 2, 3, 4} //should be [...]
 
 	fmt.Println("len arr3:", cap(arr3))
 	fmt.Println(cap(arr4))
 
-	secondDArr := [2][3]int{{1,1,1},{2,2,2}}
-	for i:=0;i<2;i++ {
-		for j:=0;j<3;j++{
+	secondDArr := [2][3]int{{1, 1, 1}, {2, 2, 2}}
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 3; j++ {
 			fmt.Printf("%d", secondDArr[i][j])
 		}
 	}
 
-	for i,v := range arr3 {
+	for i, v := range arr3 {
 		fmt.Printf("%d->%d", i, v)
 	}
 
 	fmt.Println("len arr4:", len(secondDArr))
 }
 
-func DemoSlice(){
-	slice := []byte{'a','b', 'c', 'd'}
+func DemoSlice() {
+	slice := []byte{'a', 'b', 'c', 'd'}
 	var a []byte = slice[1:2]
 	var b []byte = slice[:2]
 	var c []byte = slice[2:]
@@ -126,7 +126,7 @@ func DemoSlice(){
 	fmt.Println("cap slice f:", cap(f)) // 5
 
 	g := make([]string, 3)
-	v:= copy(g, f)
+	v := copy(g, f)
 	fmt.Println("copy len:", v) // index: 3
 
 	g = append(g, "a", "b", "c")
@@ -136,18 +136,18 @@ func DemoSlice(){
 
 }
 
-func DemoMap(){
-	firstDict := map[string]int {"x":1, "y":2, "z":3}
+func DemoMap() {
+	firstDict := map[string]int{"x":1, "y":2, "z":3}
 	fmt.Println("firstDict:", firstDict)
 
-	if _,ok := firstDict["t"]; ok{
+	if _, ok := firstDict["t"]; ok {
 		fmt.Println("include t.")
-	}else{
+	}else {
 		fmt.Println("not include t.")
 	}
 
 	delete(firstDict, "z")
-	firstDict["z"]= 4
+	firstDict["z"] = 4
 	fmt.Println("firstDict changed:", firstDict)
 
 	secondDict := make(map[string]int)

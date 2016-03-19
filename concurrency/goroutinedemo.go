@@ -8,14 +8,14 @@ import (
 
 //M-P-G
 
-func sayShort(s string){
-	for i:=0;i<5;i++ {
+func sayShort(s string) {
+	for i := 0; i < 5; i++ {
 		//runtime.Gosched()
 		fmt.Println(s)
 	}
 }
 
-func DemoFirstGoRtn(){
+func DemoFirstGoRtn() {
 	runtime.GOMAXPROCS(4)
 
 	go sayShort("world")
