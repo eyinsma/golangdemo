@@ -35,4 +35,5 @@ func main() {
 	cc.DemoBufChan()
 	cc.DemoRangeChan()
 	cc.DemoSelectChan()
+	cc.DemoSelectTimeoutChan()
 }
